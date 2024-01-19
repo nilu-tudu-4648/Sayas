@@ -75,29 +75,7 @@ function NotificationScreen({ navigation, route }) {
 
 
 
-  const checkPermission = async (fileUrl) => {
-    if (Platform.OS === 'ios') {
-      downloadFile();
-    } else {
-      try {
-        const granted = await PermissionsAndroid.request(
-          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-          {
-            title: 'Storage Permission Required',
-            message:
-              'Application needs access to your storage to download File',
-          }
-        );
-        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-          downloadFile(fileUrl);
-        } else {
-          alert('Error', 'Storage Permission Not Granted');
-        }
-      } catch (err) {
-        console.log("++++" + err);
-      }
-    }
-  };
+  
   const downloadFile = (fileUrl) => {
     let date = new Date();
     let FILE_URL = fileUrl;
@@ -121,10 +99,38 @@ function NotificationScreen({ navigation, route }) {
     config(options)
       .fetch('GET', FILE_URL)
       .then(res => {
-        Toast.show('File Downloaded Successfully.');
+        Toast.show('File Downloaded Successfully.'); // Show a toast message
+      })
+      .catch(error => {
+        console.error('Error downloading file:', error);
+        Toast.show('Error downloading file.'); // Show an error toast message
       });
   };
+  const checkPermission = async (fileUrl) => {
+    if (Platform.OS === 'ios') {
+      downloadFile();
+    } else {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+          {
+            title: 'Storage Permission Required',
+            message:
+              'Application needs access to your storage to download File',
+          }
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          downloadFile(fileUrl);
+        } else {
+          alert('Error', 'Storage Permission Not Granted');
+        }
+      } catch (err) {
+        console.log("++++" + err);
+      }
+    }
+  };
 
+  
   const getFileExtention = fileUrl => {
     // To get the file extension
     return /[.]/.exec(fileUrl) ?
@@ -267,7 +273,7 @@ function NotificationScreen({ navigation, route }) {
               {
                 (notificationEnlarge?.attachmentUrl || notificationEnlarge?.bigPictureUrl) &&
                 <TouchableOpacity
-                  onPress={() => checkPermission(notificationEnlarge?.attachmentUrl || notificationEnlarge?.bigPictureUrl)}
+                  onPress={() => downloadFile(notificationEnlarge?.attachmentUrl || notificationEnlarge?.bigPictureUrl)}
                 >
                   <FontAwesome
                     name="download"
