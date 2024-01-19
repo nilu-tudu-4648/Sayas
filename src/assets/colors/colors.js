@@ -1,0 +1,20 @@
+export default {
+   dimGray:'#595959',
+   snow:'#fbfbfb',
+   darkGray:'#ACACAC',
+   loginBorderShadow:'rgba(233, 233, 233, 0.25)',
+   gray:'#7c7c7c',
+   loginBlack:'#191919',
+   royalBlue:'#4481DB',
+   headerBlue:'rgb(71,123,255)',
+   totalGray:'rgb(122,122,122)',
+   darkslategray:'rgb(55,55,55)',
+   dodgerblue:'rgb(0,156,223)',
+   lightgray:'#CECECE',
+   darkerGray:'#9f9f9f',
+   darkLiteGray:'#373737',
+   notificationGray:'#8D8D8D',
+   notificationTextGray:'#767676',
+   portfolioBackgroundBlue:'rgba(71, 123, 255, 1)',
+   flatListApplication:'rgba(151, 151, 151, 1)'
+  };

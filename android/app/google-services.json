@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1081157693252",
+    "project_id": "sayas-e2d86",
+    "storage_bucket": "sayas-e2d86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081157693252:android:5dbef33985a2efaf74b111",
+        "android_client_info": {
+          "package_name": "com.sayas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081157693252-6orvap0d7ldgdgo3g3imqvb7c3t24o8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN6i98nlMdQHNs5xlCaa2gDWW0HqlFkkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081157693252-6orvap0d7ldgdgo3g3imqvb7c3t24o8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
