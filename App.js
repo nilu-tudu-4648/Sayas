@@ -6,7 +6,7 @@ import {
 
 
 import PushNotification, { Importance } from 'react-native-push-notification';
-import { useDispatch, useSelector } from 'react-redux';
+
 import { getNotificationsinForeground, getNotificationsLength } from './src/redux/actions/notifications.actions';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppNavigation from './AppNavigation';
@@ -24,9 +24,6 @@ LogBox.ignoreLogs([
 ]);
 
 const App = () => {
-  const dispatch = useDispatch()
-  const { allNotification } = useSelector(state => state.notification)
-  
 
   useEffect(() => {
     PushNotification.createChannel(
